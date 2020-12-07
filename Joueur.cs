@@ -4,26 +4,22 @@ namespace Pendu
 {
     class Joueur
     {
-        private String nom; 
-        private int point;
-        
-        public String Nom 
+        private String nom;
+        private int nbTrialRemain;
+        public String Nom
         {
             get { return nom; }
             set { nom = value; }
         }
-
-        public int Point 
+        public int NbTrialRemain
         {
-            get { return point; }
-            set { point = value; }
+            get { return nbTrialRemain; }
+            set { nbTrialRemain = value; }
         }
-
-
-        public Joueur(String nom, int point)
+        public Joueur(String nom, int nbTrialRemain)
         {
             this.nom = nom;
-            this.point = point;
+            this.nbTrialRemain = nbTrialRemain;
         }
     }
 }

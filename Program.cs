@@ -6,15 +6,27 @@ namespace Pendu
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Grille myGrid = new Grille();
 
-            String a = "Joseph Staline";
+            myGrid.ModifyGrid(12);
+            myGrid.displayGrid();
+        }
+    }
+}
+
+/*
+
+ String a = "Joseph Staline";
             char[] x = a.ToCharArray(0, a.Length);
             foreach (var sub in x)
             {
                 Console.WriteLine($"Substring: {sub}");
             }
+   ______
+  |     |
+  |     O
+  |    /|\
+  |    / \
+__|__     
 
-        }
-    }
-}
+*/
