@@ -12,6 +12,16 @@ namespace Pendu
             get { return motATrouver; }
             set { motATrouver = value; }
         }
+        public char[] ArrayMot
+        {
+            get { return arrayMot; }
+            set { arrayMot = value; }
+        }
+        public char[] MotTrou
+        {
+            get { return motTrou; }
+            set { motTrou = value; }
+        }
         public Mot(String motATrouver)
         {
             this.motATrouver = motATrouver;
@@ -20,10 +30,18 @@ namespace Pendu
         }
         public char[] genererMot(char[] arrayMot)
         {
-            char[] motTrou = arrayMot;
+            char[] motTrou = new char[arrayMot.Length];
+            motTrou[0] = arrayMot[0];
             for (int i = 1; i < motTrou.Length; i++)
             {
-                motTrou[i] = '_';
+                if (arrayMot[i] == arrayMot[0])
+                {
+                    motTrou[i] = arrayMot[i];
+                }
+                else
+                {
+                    motTrou[i] = '_';
+                }
             }
             return motTrou;
         }
@@ -39,6 +57,15 @@ namespace Pendu
                 }
             }
             return rep;
+        }
+        public bool isWin()
+        {
+            for (int i = 1; i < this.arrayMot.Length; i++)
+                if (this.arrayMot[i] != this.motTrou[i])
+                {
+                    return false;
+                }
+            return true;
         }
     }
 }
